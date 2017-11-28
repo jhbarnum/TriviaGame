@@ -2,6 +2,6 @@ h1 {
 	text-align: center;
 	color:black;
 }
-#question, #choices, #answer, #countdown {
+#question, #choices, #answer, #countdown, #rightAnswer, #questionNum, #questionNum, #questionNumber {
 	text-align: center;
 }
