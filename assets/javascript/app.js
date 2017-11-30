@@ -26,7 +26,7 @@ var counterC;
 var i = 0;
 var winCount = 0;
 var gameCount = 1;
-var messageArr = ['You are soooooo smart', 'You are the smartest', 'teach me your ways', 'Bring it!', "You're killin' it", "OMG, I want to be you", "On Fire!", "Stop it, your making me feel stupid", "Nice Brain", "Way to go!" ]
+var messageArr = ['You are soooooo smart', 'You are the smartest', 'teach me your ways', 'Bring it!', "You're killin' it", "OMG, I want to be you", "On Fire!", "Stop it, you're making me feel stupid", "Nice Brain", "Way to go!" ]
 // Sets the interval countdown for the question timer
 function run() {
 	counter = setInterval(countdown, 1000);
@@ -83,6 +83,7 @@ function countdown() {
     $("#four").val(answerArr[i][3]);
     $("#rightAnswer").html("");  
     $("#choices").html("");
+    $("#answer").show();
 	if (number === 0) {
         stop();
         fiveSecondsTimeOut();
@@ -114,6 +115,7 @@ function getReady() {
         $("#three").val("");
         $("#four").val("");
         $("#questionNumber").html("");
+        $("#answer").hide();
     }
     if (gameCount === 10) {
         $("#choices").html("Calculating Your Results");
@@ -126,6 +128,7 @@ function getReady() {
         $("#three").val("");
         $("#four").val("");
         $("#questionNumber").html("");
+        $("#answer").hide();
     }
     // When countdown is over, return to next question
 	if (numberB === 0) {
@@ -135,8 +138,6 @@ function getReady() {
         gameCount++;
      }
      if (gameCount === 11) {
-        // $("#choices").html("Calculating Your Results");
-        // $("#countdown").html("<h2>" + numberB + "</h2>");
         endGame();
       }
  }
@@ -153,6 +154,7 @@ function timeOut() {
         $("#three").val("");
         $("#four").val("");
         $("#questionNumber").html("");
+        $("#answer").hide();
     }
     if (gameCount === 10) {
         $("#choices").html("Calculating Your Results");
@@ -165,6 +167,7 @@ function timeOut() {
         $("#three").val("");
         $("#four").val("");
         $("#questionNumber").html("");
+        $("#answer").hide();
     }
     // When countdown is over, return to next question
     if (numberC === 0) {
@@ -174,8 +177,6 @@ function timeOut() {
         gameCount++;
      }
     if (gameCount === 11) {
-        // $("#choices").html("Calculating Your Results");
-        // $("#countdown").html("<h2>" + numberB + "</h2>");
         endGame();
     
       }
@@ -194,6 +195,7 @@ function youRight() {
         $("#three").val("");
         $("#four").val("");
         $("#questionNumber").html("");
+        $("#answer").hide();
     }
     if (gameCount < 10) {
         $("#countdown").html("<h2>" + numberB + "</h2>");
@@ -205,6 +207,7 @@ function youRight() {
         $("#three").val("");
         $("#four").val("");
         $("#questionNumber").html("");
+        $("#answer").hide();
     }
     
     if (numberB === 0) {
@@ -213,15 +216,8 @@ function youRight() {
         run();
         gameCount++;
     }
-    // if (gameCount === 4) {
-    //     $("#choices").html("Calculating Your Results");
-    //     $("#countdown").html("<h2>" + numberB + "</h2>");
-    // }
     if (gameCount === 11) {
-        // $("#choices").html("Calculating Your Results");
-        // $("#countdown").html("<h2>" + numberB + "</h2>");
         endGame();
-    
       }
     }
 // Captures click value on choice 1 and checks for right answer

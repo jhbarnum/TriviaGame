@@ -8,3 +8,6 @@ h1 {
 #question, #choices, #answer, #countdown, #rightAnswer, #questionNum, #questionNum, #questionNumber {
 	text-align: center;
 }
+.abutton {
+	width: 30%;
+}
